@@ -54,9 +54,11 @@ resource "aws_security_group" "my_test_sg" {
 #   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnCvq7zH9M1e+vc96fE... example_key_pair"
 # }
 
+
+
 # Create an EC2 instance
 resource "aws_instance" "my_ichie_instance" {
-  ami                    = "ami-069aabeee6f53e7bf"
+  ami                    = "ami-007855ac798b5175e"
   instance_type          = "t2.micro"
   key_name               = "devops-key-pair"
   vpc_security_group_ids = [aws_security_group.my_test_sg.id]
@@ -64,5 +66,10 @@ resource "aws_instance" "my_ichie_instance" {
 
   tags = {
     Name = "terraform_test_instance"
+  }
+
+
+  root_block_device {
+    encrypted   = true
   }
 }
