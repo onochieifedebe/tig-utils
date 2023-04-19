@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     aws = {
-        source = "hashicorp/aws"
-        version = "~> 4.62.0"
+      source  = "hashicorp/aws"
+      version = "~> 4.62.0"
     }
   }
 }
@@ -43,7 +43,7 @@ resource "aws_security_group" "my_test_sg" {
   }
 
   tags = {
-    mangedBy = "terraform"
+    mangedBy    = "terraform"
     environment = "dev"
   }
 }
@@ -56,11 +56,11 @@ resource "aws_security_group" "my_test_sg" {
 
 # Create an EC2 instance
 resource "aws_instance" "my_ichie_instance" {
-  ami           = "ami-069aabeee6f53e7bfv"
-  instance_type = "t2.micro"
-  key_name      = "devops-key-pair"
+  ami                    = "ami-069aabeee6f53e7bf"
+  instance_type          = "t2.micro"
+  key_name               = "devops-key-pair"
   vpc_security_group_ids = [aws_security_group.my_test_sg.id]
-  subnet_id     = "subnet-02193bafd5aca89e0"
+  subnet_id              = "subnet-02193bafd5aca89e0"
 
   tags = {
     Name = "terraform_test_instance"
