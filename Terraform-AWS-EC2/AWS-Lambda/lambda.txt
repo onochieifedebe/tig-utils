@@ -1,7 +1,0 @@
-Note that you'll need to replace the region, filename, event_source_arn, bucket, 
-and policy_arn values with appropriate values for your use case. Additionally, 
-you may want to customize the handler, timeout, memory_size, 
-and reserved_concurrent_executions values to suit your needs.
- 
-Finally, you'll need to ensure that the filename value references a valid ZIP file 
-containing the Lambda function's code.
