@@ -35,3 +35,6 @@ terraform.rc
 
 #ignore vscode files
 .vscode
+
+#ignore apple mac extensions
+.DS_Store
